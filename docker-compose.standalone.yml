@@ -8,7 +8,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: photography
     ports:
-      - "5432:5432"
+      - "5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -24,8 +24,8 @@ services:
       RUSTFS_SECRET_KEY: rustfsadmin
       RUSTFS_CONSOLE_ENABLE: "true"
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - "9000"
+      - "9001"
     volumes:
       - rustfs_data:/data
 
@@ -62,7 +62,7 @@ services:
     build: .
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "3000"
     volumes:
       - next_cache:/app/.next
     command: >
